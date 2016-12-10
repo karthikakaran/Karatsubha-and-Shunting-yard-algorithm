@@ -1,0 +1,47 @@
+
+CS 4V95.003, CS 5V81.012. Implementation of data structures and algorithms
+Fall 2016
+Optional Project 2
+Thu, Sep 8, 2016
+
+Version 1.0: Initial description (Thu, Sep 8, 4:00 PM).
+
+Due: 11:59 PM, Sun, Sep 19.
+
+
+1. Suppose large numbers are stored in a list of integers.  Write a function
+   for multiplying two large numbers using Karatsuba's algorithm:
+	https://en.wikipedia.org/wiki/Karatsuba_algorithm
+
+   List<Integer> product(List<Integer> x, List<Integer> y, int b) {
+	  // Return z = x * y.  Numbers are stored using base b.
+          // The "digits" are stored in the list with the least
+          // significant digit first.  For example, if b = 10, then
+          // the number 709 will be stored as 9 -> 0 -> 7.
+          // Assume that b is small enough that you will not get any
+          // overflow of numbers during the operation.
+
+	}
+
+2. Implement array-based, bounded-sized queues, that support the following operations:
+   offer, poll, peek, isEmpty (same behavior as in Java's Queue interface).
+   In addition, implement the method resize(), which doubles the queue size
+   if the queue is mostly full (over 90%, say), or halves it if the queue
+   is mostly empty (less then 25% occupied, say).  Let the queue have a
+   minimum size of 16, at all times.
+
+3. Write Merge sort algorithm without using recursion by maintaining
+   your own stack and simulating how the compiler implements function calls.
+
+4. Implement the Shunting Yard algorithm:
+	https://en.wikipedia.org/wiki/Shunting-yard_algorithm
+   for parsing arithmetic expressions using the following precedence rules
+   (highest to the lowest).
+
+   * Parenthesized expressions (...)
+   * Unary operator: factorial (!)
+   * Exponentiation (^), right associative.
+   * Product (*), division (/).  These operators are left associative.
+   * Sum (+), and difference (-).  These operators are left associative.
+
+   Output the equivalent expression in postfix.
